@@ -7,12 +7,14 @@
 		// define an empty attach
 		//var emptyAt = attach();
 		
-		// define a attach object, the first element is a jquery object
+		// define a attach object attach on a jquery object
 		var firstAt = attach($('#seletor'), action1);
 		
+		// define a attach object attach on an Attach object
 		var secondAt = attach(firstAt, action2);
 		var thirdAt = attach($('#seletor'), action3);
 		
+		// define a attach object attach on an array of Attach objects
 		var fourthAt = attach([secondAt, thirdAt], action4);
 		
 		function action1( obj ) {
