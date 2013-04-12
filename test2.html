@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+	<script src="jquery.min.js" type="text/javascript" />
+	<script src="hantak.js" type="text/javascript" />
+	<script type="text/javascript">
+		// define an empty hantak
+		var emptyHt = hantak();
+		
+		// define a hantak object, the first element is a jquery object
+		var firstHt = hantak($('#seletor', action1));
+		
+		var action1 = function( obj ) {
+			alert('test1');
+		}
+		
+		// define a hantak object, the first element is a hantak object
+		var secondHt = hantak(firstHt, action2);
+		var thirdHt = hantak(firstHt, action3);
+		
+		// define a hantak object, 
+		var fourthHt = hantak(array(secondHt, thirdHt), action4);
+		
+		var action2 = function() {
+			alert('test2');
+		}
+		
+		var action3 = function() {
+			alert('test3');
+		}
+		
+		var action4 = function() {
+			alert('test4');
+		}
+	</script>
+</head>
+<body>
+	<div id="seletor"></div>
+</body>
+</html>

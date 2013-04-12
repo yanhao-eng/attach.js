@@ -1,0 +1,40 @@
+﻿<html>
+<head>
+	<script src="jquery.min.js" type="text/javascript"></script>
+	<script src="attach.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		// define an empty attach
+		//var emptyAt = attach();
+		
+		// define a attach object, the first element is a jquery object
+		var firstAt = attach($('#seletor'), action1);
+		
+		var secondAt = attach(firstAt, action2);
+		var thirdAt = attach($('#seletor'), action3);
+		
+		var fourthAt = attach([secondAt, thirdAt], action4);
+		
+		function action1( obj ) {
+			alert('test1');
+		}
+		
+		function action2() {
+			alert('test2');
+		}
+		
+		function action3() {
+			alert('test3');
+		}
+		
+		function action4() {
+			alert('test4');
+		}
+
+	})
+	</script>
+</head>
+<body>
+	<div id="seletor"></div>
+</body>
+</html>
